@@ -17,6 +17,8 @@ Modular monolith. One Next.js application and one Supabase project per environme
 ## Request flow
 Browser -> Next.js server boundary -> Supabase Auth/Postgres/Storage.
 
+The Next.js `proxy.ts` convention refreshes cookie-backed Supabase Auth tokens. It does not make authorization decisions; each protected page, route handler, and server action must still verify identity, shop membership, and role.
+
 Public customer upload flow -> server validates station/session capability -> narrowly scoped upload operation -> private object storage -> metadata registration.
 
 Do not allow anonymous users to call broad table APIs or enumerate storage objects.

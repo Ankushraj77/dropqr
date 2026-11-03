@@ -22,6 +22,7 @@
 - Private buckets and short-lived authorized downloads.
 - RLS on all exposed tenant-owned tables.
 - Server-side membership and role checks.
+- Token refresh at the request proxy is not authorization; privileged operations validate membership and role at their own server boundary.
 - No authorization from user-editable metadata.
 - No service-role key in client code.
 - Opaque storage keys; sanitize display names.

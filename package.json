@@ -1,0 +1,11 @@
+{
+  "name": "dropqr-studio",
+  "private": true,
+  "workspaces": ["apps/web"],
+  "scripts": {
+    "dev": "npm --workspace @dropqr/web run dev",
+    "build": "npm --workspace @dropqr/web run build",
+    "lint": "npm --workspace @dropqr/web run lint",
+    "typecheck": "npm --workspace @dropqr/web run typecheck"
+  }
+}

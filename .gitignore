@@ -5,6 +5,7 @@ dist/
 build/
 coverage/
 .turbo/
+.vercel/
 .env
 .env.*
 !.env.example
@@ -16,3 +17,4 @@ Thumbs.db
 *.key
 *.p12
 *.pfx
+supabase/.temp/

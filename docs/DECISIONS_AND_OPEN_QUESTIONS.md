@@ -8,6 +8,8 @@
 - Supabase for database, auth and storage.
 - Vercel hosting.
 - GitHub source control.
+- Email/password authentication through Supabase Auth.
+- Initial shop upload settings: 25 MiB per file, 20 files per session, 100 MiB total per session, and 24-hour session expiry. These are configurable shop settings, with platform ceilings.
 - First operational tenant: AK DIGITAL SERVICES.
 - Future product: multi-shop SaaS.
 - One integrated product, not separate apps.
@@ -19,17 +21,15 @@
 - Private storage.
 - No customer account.
 - Temporary upload sessions.
-- 24-hour session expiry as a proposed default only.
 - Conservative initial upload limit; no 3 GB guarantee at launch.
 - Windows companion after web product is stable.
 
-## Questions Codex must raise before implementation where they affect schema or security
-1. What initial maximum file size and maximum files per session should be enforced?
-2. What retention period should be disclosed to customers?
-3. Which image formats and PDF operations are essential for the first release?
-4. Is customer upload allowed only while the shop is open, or at any time?
-5. Which shop roles are required in the first release?
-6. Should locally imported files be cloud-saved by default or only on explicit action?
-7. What backup and recovery expectations apply to originals and processed outputs?
+## Open decisions for later phases
+1. What retention period should be disclosed to customers beyond the upload-session expiry?
+2. Which image formats and PDF operations are essential for the first release?
+3. Is customer upload allowed only while the shop is open, or at any time?
+4. Which shop roles are required in the first release?
+5. Should locally imported files be cloud-saved by default or only on explicit action?
+6. What backup and recovery expectations apply to originals and processed outputs?
 
-Codex should propose safe defaults and explain trade-offs rather than silently inventing answers.
+Items not specified above remain open. Proposed or implemented defaults should be documented and kept configurable where practical.

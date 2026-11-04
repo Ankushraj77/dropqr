@@ -12,12 +12,15 @@ Acceptance:
 - Cross-tenant tests prove isolation.
 
 ## Phase 2 — QR and upload
-Acceptance:
-- Owner creates and disables QR station.
-- Customer uploads without account.
-- Session token cannot list/download/delete.
-- Upload limits and expiration work.
-- Shop inbox only sees its own sessions.
+Milestones and gates:
+- A. Shop onboarding and QR station management. Gate: provisioning, tenant RLS, owner/employee authorization, and the unchanged Phase 1 tests pass.
+- B. Secure temporary customer upload sessions. Gate: session capabilities are upload-only, one-session scoped, quota-enforced, and retry/expiry checked.
+- C. Mobile-first customer upload interface. Gate: phone layout, validation feedback, progress, and error/retry behavior are verified.
+- D. Private Supabase Storage integration. Gate: automated Storage policy and negative authorization tests prove private, upload-only, session-scoped access.
+- E. Shop file inbox and file management. Gate: members see only their tenant metadata and originals remain private.
+- F. Session expiration and file cleanup. Gate: expiration, retries, orphan recovery, and concurrent session tests pass.
+
+Do not start a later milestone until its predecessor's security gate passes. Do not implement Document Studio or Windows Companion in Phase 2.
 
 ## Phase 3 — File management
 Acceptance:

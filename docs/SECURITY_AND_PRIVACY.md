@@ -32,10 +32,16 @@
 - Regular dependency and deployment review.
 
 ## Retention
-The initial 24-hour session expiry is a proposal only. The owner must approve a clear retention period and customer-facing disclosure before production. Deletion jobs must remove both metadata and objects, retry failures, and report orphaned objects.
+The initial configurable shop defaults are 25 MiB per file, 20 files per session,
+100 MiB total per session, and 24-hour session expiry, subject to platform caps.
+Milestone B will enforce them for new sessions, and milestone F will remove
+expired metadata and objects, retry failures, and report orphaned objects.
 
 ## Backup
 Define database and object-storage backup/recovery separately. A database backup alone does not restore uploaded files. Test restoration before production reliance.
 
 ## Release blockers
 Any unresolved cross-tenant access, public storage exposure, unbounded upload, leaked secret, or untested deletion path blocks production release.
+
+The required milestone-by-milestone Storage and tenant security checks are
+tracked in `PHASE_2_SECURITY_TEST_PLAN.md`.
